@@ -1,50 +1,100 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:">
+    <title>Responsive Student Profile - Dwayne Delos Santos</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
-            https://cordova.apache.org/docs/en/latest/
-        Some notes:
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+<!-- Header Section -->
+<header role="banner">
+    <div class="header-container">
+        <div class="profile-header">
+            <img src="img/Dwayneprofile.jpg" alt="Profile picture of Dwayne B. Delos Santos" class="profile-pic">
+            <div class="profile-title">
+                <h1>Dwayne B. Delos Santos</h1>
+                <p class="subtitle">Information Technology Student</p>
             </div>
         </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+
+        <!-- Navigation Menu -->
+        <nav aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-btn">About</a></li>
+                <li><a href="#skills" class="nav-btn">Skills</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="main-content" class="container">
+    <!-- About Section -->
+    <section id="about" class="card" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <div class="about-text">
+            <p>
+                Hello! I am Dwayne B. Delos Santos, a passionate college student pursuing my degree in Information Technology.
+                I have a strong drive for modern software development, web applications, and mobile application engineering.
+            </p>
+            <p>
+                When I am not coding or working on academic tasks, I enjoy competitive gaming, exploring relational databases,
+                and refining my skills in full-stack project building.
+            </p>
+        </div>
+
+        <div class="about-grid">
+            <div class="info-box">
+                <h3>Interests</h3>
+                <p>Competitive Gaming, Web Development, Database Management, Mobile App Architecture.</p>
+            </div>
+            <div class="info-box">
+                <h3>Educational Background</h3>
+                <p>Currently pursuing a Bachelor of Science in Information Technology (BSIT).</p>
+            </div>
+            <div class="info-box">
+                <h3>Goals & Aspirations</h3>
+                <p>My goal is to become a highly proficient full-stack software engineer and lead innovative technology projects in the industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="card" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills & Competencies</h2>
+        <ul class="skills-grid">
+            <li class="skill-card">
+                <strong>HTML5 & CSS3</strong>
+                <p>Designing modern, responsive layout structures and user interface styling.</p>
+            </li>
+            <li class="skill-card">
+                <strong>Java Programming</strong>
+                <p>Building core logic, data handling, and backend algorithms.</p>
+            </li>
+            <li class="skill-card">
+                <strong>SQL & Databases</strong>
+                <p>Writing DML queries, designing ERD schemas, and managing database tables.</p>
+            </li>
+            <li class="skill-card">
+                <strong>Git & Version Control</strong>
+                <p>Managing project repositories, code branching, and remote synchronization.</p>
+            </li>
+            <li class="skill-card">
+                <strong>Apache Cordova</strong>
+                <p>Building and deploying cross-platform mobile hybrid apps for Android.</p>
+            </li>
+        </ul>
+    </section>
+</main>
+
+<!-- Footer Section -->
+<footer role="contentinfo">
+    <p>&copy; 2026 Dwayne B. Delos Santos. All rights reserved.</p>
+</footer>
+
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+</body>
 </html>
