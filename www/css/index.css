@@ -66,6 +66,34 @@ h1 {
 }
 
 /* Usable Controls & Touch Targets */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  font-weight: bold;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 44px; /* Accessible tap target */
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: var(--primary-accent);
+  color: #ffffff;
+}
+
 nav ul {
     list-style: none;
     display: flex;
