@@ -1,64 +1,67 @@
-# ITCC 41 - Activity 3: Responsive Student Profile
-
-**Student Name:** Dwayne B. Delos Santos  
-**Course & Section:** BSIT - ITCC 41  
-
----
-
-## Layout Screenshots
-
-### 1. Mobile Layout
-![Mobile View](Screenshots/Mobile.png)
-
-### 2. Tablet Layout
-![Tablet View](Screenshots/TabletIpad.png)
-
-### 3. Desktop Layout
-![Desktop View](Screenshots/Desktop.png)
-
----
-
-## Features & Improvements
-- **Responsive Design:** Custom media queries adapting layout across Mobile, Tablet, and Desktop screen sizes.
-- **Accessibility:** Added ARIA roles, high contrast text, and focus indicators for buttons.
-- **Mobile Usability:** Configured 44px minimum touch targets and responsive flex/grid spacing.
-
-# ITCC 41 - Activity 4: Responsive Student Profile Application
+# ITCC 41 - Activity 5: Interactive Profile Editing Application
 
 ## 1. Project Description
-A multi-page cross-platform mobile and web application built for Apache Cordova. This application displays the professional student profile, academic background, technical competencies, featured engineering projects, and contact information for Dwayne B. Delos Santos.
+A multi-page cross-platform mobile and web application built with **Apache Cordova** for **Dwayne B. Delos Santos**. This version introduces dynamic client-side profile editing, real-time DOM manipulation, JavaScript form validation, and persistent local storage (`localStorage`) across browser and mobile app reloads.
+
+---
 
 ## 2. Application Pages
-* **Profile (`index.html`):** Serving as the main landing UI, this page features the hero header avatar, primary overview, and high-level navigation access.
-![Mobile View](Screenshots/Profilemain.jpg)
-* **About (`about.html`):** Highlights personal background, education credentials, core interests, and career goals arranged in structured card layouts.
-![Mobile View](Screenshots/About.jpg)
-* **Skills (`skills.html`):** Itemizes technical competencies including HTML/CSS, Java programming, SQL database manipulation, Git version control, and Apache Cordova.
-![Mobile View](Screenshots/Skills.jpg)
+* **Profile (`index.html`):** The main landing interface containing the dynamic profile card, interactive display fields, and the toggleable Profile Editing form.
+  ![Profile View](Screenshots/ProfileMain.jpg)
+* **About (`about.html`):** Highlights personal background, education credentials, core interests, and career aspirations arranged in structured card layouts.
+  ![About View](Screenshots/About.jpg)
+* **Skills (`skills.html`):** Itemizes technical competencies including HTML/CSS, Java programming, SQL database management, Git, and Apache Cordova.
+  ![Skills View](Screenshots/Skills.jpg)
 * **Projects (`projects.html`):** Showcases featured software engineering projects with details on project roles, technology stacks, and operational summaries.
-![Mobile View](Screenshots/Projects.jpg)
-* **Contact (`contact.html`):** Provides direct channels for collaboration, professional email communication, location, and GitHub repository links.
-![Mobile View](Screenshots/Contact.jpg)
+  ![Projects View](Screenshots/Projects.jpg)
+* **Contact (`contact.html`):** Provides direct channels for collaboration, professional email communication, location details, and GitHub repository links.
+  ![Contact View](Screenshots/Contact.jpg)
 
-## 3. Navigation
-Navigation is handled seamlessly across all pages via standard semantic HTML hyperlinking (`<a href="...">`). A persistent `<header>` navigation bar is embedded across every HTML document, enabling one-tap transitions between pages and quick return access to the main profile landing UI (`Profile / ← Home`).
+---
 
-## 4. Responsive Design
-The application utilizes fluid media queries, CSS Grid, and Flexbox containers to adapt smoothly across all screen form factors:
-* **Mobile (< 600px):** Elements stack vertically in a single-column layout with touch-optimized target paddings for small mobile viewports.
-* **Tablet (600px – 900px):** Content cards reflow into dynamic 2-column grid arrangements to maximize screen real estate.
-* **Desktop (> 900px):** Expands to full multi-column layouts with centered maximum-width containers (`1200px`) and refined spatial padding.
+## 3. Profile Editing
+The main profile page features a dual-mode interface:
+* **Display Mode:** Renders the active profile information (Full Name, Course, Year Level, About Me, and Technical Skills).
+* **Edit Form Mode:** Triggered by the "Edit Profile" button, replacing the card view with an inline form populated with current profile data.
+* **Editable Fields:**
+  * **Full Name:** Text input (`#input-name`)
+  * **Course:** Text input (`#input-course`)
+  * **Year Level:** Text input (`#input-year`)
+  * **About Me:** Textarea input (`#input-about`)
+  * **Skills:** Comma-separated text input (`#input-skills`)
+* Users can save updates via the **Save** button or discard changes using the **Cancel** button.
 
-## 5. UI/UX Principles Applied
-* **Visual Hierarchy:** Distinct headings (`<h1>`, `<h2>`, `<h3>`), high-contrast typography, and explicit section groupings guide reader focus naturally.
-* **Consistency:** Universal color palettes (dark theme slate background with bold card containers), recurring typography, and identical header/footer structures across all 5 pages.
-* **Accessibility:** Semantic HTML elements (`<main>`, `<header>`, `<nav>`, `<article>`), high contrast ratios for readability, and `aria-labelledby` tags on sections.
-* **Touch Optimization:** Generous padding around buttons and navigation anchors tailored for native mobile touch interaction.
+---
 
-## 6. How to Run
-To run this application locally using Apache Cordova and Android Studio:
+## 4. JavaScript Functionality
+Located in `www/js/index.js`, the JavaScript logic uses standard ECMAScript DOM APIs and event handling:
+* **Event Listening:** Utilizes `DOMContentLoaded` to initialize data loading and attaches `click` listeners to `btn-edit`, `btn-save`, and `btn-cancel`.
+* **State Toggling:** Dynamically switches visibility between `#profile-view` and `#edit-view` using CSS `display` properties.
+* **Input Validation:**
+  * Checks for empty or whitespace-only inputs across required fields before saving.
+  * Displays inline error feedback in red (`#error-message`) if required fields are blank.
+* **DOM Updating:** `loadProfile()` updates text nodes (`textContent`) dynamically without reloading the web view.
 
-1. **Clone the Repository:**
-   ```bash
-   git clone <YOUR_PUBLIC_GITHUB_REPO_LINK>
-   cd <LastName>_StudentProfile
+---
+
+## 5. Local Data Storage
+* **Persistence Layer:** Uses the browser `window.localStorage` API under the key `'studentProfile'`.
+* **Serialization:** Profile data is serialized into JSON format using `JSON.stringify()` on save and deserialized using `JSON.parse()` on application startup.
+* **Default Fallback:** If `localStorage` is empty (first run), the application automatically initializes with default values for Dwayne Delos Santos.
+
+---
+
+## 6. Responsive Design
+The application utilizes fluid CSS media queries, CSS Grid, and Flexbox containers to adapt smoothly across all screen form factors:
+* **Mobile (< 600px):** Single-column stacked layouts, touch-optimized button targets (minimum 44px height), and centered mobile cards.
+* **Tablet (600px – 900px):** Reflows content into 2-column grid arrangements with flexible card containers.
+* **Desktop (> 900px):** Expands to full multi-column layouts centered within a maximum container width (1200px) with generous spatial padding.
+
+---
+
+## 7. How to Run
+
+### Clone the Repository:
+```bash
+git clone [https://github.com/delossantosdwayne8-design/ITCC41DelosSantos.git](https://github.com/delossantosdwayne8-design/ITCC41DelosSantos.git)
+cd ITCC41DelosSantos
