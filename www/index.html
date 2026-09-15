@@ -1,101 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Student Profile - Dwayne Delos Santos</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-
-<!-- Header Section -->
-<header role="banner">
-    <div class="header-container">
-        <div class="profile-header">
-            <img src="img/Dwayneprofile.jpg" alt="Profile picture of Dwayne B. Delos Santos" class="profile-pic">
-            <div class="profile-title">
-                <h1>Dwayne B. Delos Santos</h1>
-                <p class="subtitle">Information Technology Student</p>
-            </div>
-        </div>
-
-        <!-- Navigation Menu -->
-        <nav class="main-nav" aria-label="Main Navigation">
-            <a href="index.html" class="nav-link">Profile</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="skills.html" class="nav-link">Skills</a>
-            <a href="projects.html" class="nav-link">Projects</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
+<!-- Main Display View -->
+<section id="profile-view" class="card">
+    <div class="profile-header">
+        <img src="img/profile.jpg" alt="Profile Picture" id="display-img" class="profile-img">
+        <h1 id="display-name">Dwayne Delos Santos</h1>
+        <p id="display-course">BS Information Technology</p>
+        <p id="display-year">3rd Year</p>
     </div>
-</header>
+    <div class="profile-body">
+        <h3>About Me</h3>
+        <p id="display-about">Passionate about full-stack web development and mobile applications.</p>
+        <h3>Skills</h3>
+        <p id="display-skills">HTML, CSS, JavaScript, Java, SQL, Apache Cordova</p>
+    </div>
+    <button id="btn-edit" type="button">Edit Profile</button>
+</section>
 
-<main id="main-content" class="container">
-    <!-- About Section -->
-    <section id="about" class="card" aria-labelledby="about-heading">
-        <h2 id="about-heading">About Me</h2>
-        <div class="about-text">
-            <p>
-                Hello! I am Dwayne B. Delos Santos, a passionate college student pursuing my degree in Information Technology.
-                I have a strong drive for modern software development, web applications, and mobile application engineering.
-            </p>
-            <p>
-                When I am not coding or working on academic tasks, I enjoy competitive gaming, exploring relational databases,
-                and refining my skills in full-stack project building.
-            </p>
+<!-- Edit Profile Form (Hidden by Default) -->
+<section id="edit-view" class="card" style="display: none;">
+    <h2>Edit Profile</h2>
+
+    <!-- Error Validation Feedback -->
+    <div id="error-message" style="color: red; margin-bottom: 10px; font-weight: bold;"></div>
+
+    <form id="profile-form">
+        <label for="input-name">Full Name:</label>
+        <input type="text" id="input-name" required>
+
+        <label for="input-course">Course:</label>
+        <input type="text" id="input-course" required>
+
+        <label for="input-year">Year Level:</label>
+        <input type="text" id="input-year" required>
+
+        <label for="input-about">About Me:</label>
+        <textarea id="input-about" rows="4" required></textarea>
+
+        <label for="input-skills">Skills (separated by commas):</label>
+        <input type="text" id="input-skills">
+
+        <div class="form-actions" style="margin-top: 15px;">
+            <button id="btn-save" type="button">Save</button>
+            <button id="btn-cancel" type="button">Cancel</button>
         </div>
-
-        <div class="about-grid">
-            <div class="info-box">
-                <h3>Interests</h3>
-                <p>Competitive Gaming, Web Development, Database Management, Mobile App Architecture.</p>
-            </div>
-            <div class="info-box">
-                <h3>Educational Background</h3>
-                <p>Currently pursuing a Bachelor of Science in Information Technology (BSIT).</p>
-            </div>
-            <div class="info-box">
-                <h3>Goals & Aspirations</h3>
-                <p>My goal is to become a highly proficient full-stack software engineer and lead innovative technology projects in the industry.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="card" aria-labelledby="skills-heading">
-        <h2 id="skills-heading">Skills & Competencies</h2>
-        <ul class="skills-grid">
-            <li class="skill-card">
-                <strong>HTML5 & CSS3</strong>
-                <p>Designing modern, responsive layout structures and user interface styling.</p>
-            </li>
-            <li class="skill-card">
-                <strong>Java Programming</strong>
-                <p>Building core logic, data handling, and backend algorithms.</p>
-            </li>
-            <li class="skill-card">
-                <strong>SQL & Databases</strong>
-                <p>Writing DML queries, designing ERD schemas, and managing database tables.</p>
-            </li>
-            <li class="skill-card">
-                <strong>Git & Version Control</strong>
-                <p>Managing project repositories, code branching, and remote synchronization.</p>
-            </li>
-            <li class="skill-card">
-                <strong>Apache Cordova</strong>
-                <p>Building and deploying cross-platform mobile hybrid apps for Android.</p>
-            </li>
-        </ul>
-    </section>
-</main>
-
-<!-- Footer Section -->
-<!-- Footer Section -->
-<footer role="contentinfo">
-    <p>&copy; 2026 Dwayne B. Delos Santos. All rights reserved.</p>
-</footer>
-
-<script src="cordova.js"></script>
-<script src="js/index.js"></script>
-</body>
-</html>
+    </form>
+</section>
