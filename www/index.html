@@ -1,46 +1,75 @@
-<!-- Main Display View -->
-<section id="profile-view" class="card">
-    <div class="profile-header">
-        <img src="img/profile.jpg" alt="Profile Picture" id="display-img" class="profile-img">
-        <h1 id="display-name">Dwayne Delos Santos</h1>
-        <p id="display-course">BS Information Technology</p>
-        <p id="display-year">3rd Year</p>
-    </div>
-    <div class="profile-body">
-        <h3>About Me</h3>
-        <p id="display-about">Passionate about full-stack web development and mobile applications.</p>
-        <h3>Skills</h3>
-        <p id="display-skills">HTML, CSS, JavaScript, Java, SQL, Apache Cordova</p>
-    </div>
-    <button id="btn-edit" type="button">Edit Profile</button>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Student Profile</title>
+</head>
+<body>
 
-<!-- Edit Profile Form (Hidden by Default) -->
-<section id="edit-view" class="card" style="display: none;">
-    <h2>Edit Profile</h2>
+<main class="container">
+    <!-- Main Display View -->
+    <section id="profile-view" class="card">
+        <div class="profile-header">
+            <div class="profile-img-container">
+                <img src="img/Dwayneprofile.jpg" alt="Profile Picture" id="display-img" class="profile-img" style="cursor: pointer;" title="Click to change photo">
+            </div>
 
-    <!-- Error Validation Feedback -->
-    <div id="error-message" style="color: red; margin-bottom: 10px; font-weight: bold;"></div>
+            <!-- Photo Action Buttons -->
+            <div class="photo-actions" style="margin-top: 10px; margin-bottom: 10px; display: flex; gap: 8px; justify-content: center;">
+                <button id="btn-change-photo" type="button">Change Profile Picture</button>
+                <button id="btn-reset-photo" type="button">Reset Photo</button>
+            </div>
 
-    <form id="profile-form">
-        <label for="input-name">Full Name:</label>
-        <input type="text" id="input-name" required>
+            <!-- Camera Error & Permission Feedback Container -->
+            <div id="camera-error-message" style="display: none; color: red; font-size: 0.9em; margin-top: 5px;"></div>
 
-        <label for="input-course">Course:</label>
-        <input type="text" id="input-course" required>
-
-        <label for="input-year">Year Level:</label>
-        <input type="text" id="input-year" required>
-
-        <label for="input-about">About Me:</label>
-        <textarea id="input-about" rows="4" required></textarea>
-
-        <label for="input-skills">Skills (separated by commas):</label>
-        <input type="text" id="input-skills">
-
-        <div class="form-actions" style="margin-top: 15px;">
-            <button id="btn-save" type="button">Save</button>
-            <button id="btn-cancel" type="button">Cancel</button>
+            <h1 id="display-name">Dwayne Delos Santos</h1>
+            <p id="display-course">BS Information Technology</p>
+            <p id="display-year">3rd Year</p>
         </div>
-    </form>
-</section>
+        <div class="profile-body">
+            <h3>About Me</h3>
+            <p id="display-about">Passionate about full-stack web development and mobile applications.</p>
+            <h3>Skills</h3>
+            <p id="display-skills">HTML, CSS, JavaScript, Java, SQL, Apache Cordova</p>
+        </div>
+        <button id="btn-edit" type="button">Edit Profile</button>
+    </section>
+
+    <!-- Edit Profile Form (Hidden by Default) -->
+    <section id="edit-view" class="card" style="display: none;">
+        <h2>Edit Profile</h2>
+
+        <!-- Error Validation Feedback -->
+        <div id="error-message"></div>
+
+        <form id="profile-form">
+            <label for="input-name">Full Name:</label>
+            <input type="text" id="input-name" required>
+
+            <label for="input-course">Course:</label>
+            <input type="text" id="input-course" required>
+
+            <label for="input-year">Year Level:</label>
+            <input type="text" id="input-year" required>
+
+            <label for="input-about">About Me:</label>
+            <textarea id="input-about" rows="4" required></textarea>
+
+            <label for="input-skills">Skills (separated by commas):</label>
+            <input type="text" id="input-skills">
+
+            <div class="form-actions">
+                <button id="btn-save" type="button">Save</button>
+                <button id="btn-cancel" type="button">Cancel</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
